@@ -108,6 +108,8 @@ export async function getRandomCovers(
     [limit, offset]
   );
 
+  console.log("res===>", res);
+
   if (res.rowCount === 0) {
     return [];
   }
@@ -254,6 +256,9 @@ export function getCoversFromSqlResult(
 
   const covers: Cover[] = [];
   const { rows } = res;
+
+  console.log("rows===>", rows);
+
   rows.forEach((row) => {
     const cover = formatCover(row);
     if (cover) {
