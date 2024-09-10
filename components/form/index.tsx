@@ -55,7 +55,8 @@ export default function () {
 
     try {
       setLoading(true);
-      const resp = await fetch(`/api/upload-cover`, {
+      // const resp = await fetch(`/api/upload-cover`, {
+      const resp = await fetch(`/api/upload-file`, {
         method: "POST",
         body: formData,
       });
