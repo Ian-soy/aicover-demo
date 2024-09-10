@@ -1,7 +1,5 @@
 // import AWS from "aws-sdk";
-import { Readable } from "stream";
-import axios from "axios";
-import fs from "fs";
+// supabase storage upload file test
 import { supabaseClient } from "./supabase";
 
 // 上传文件
