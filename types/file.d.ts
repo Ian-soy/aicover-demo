@@ -4,5 +4,5 @@ export interface Files {
   img_size: string;
   img_url: string;
   created_at: string;
-  user_uuid: string;
+  user_uuid?: string;
 }
