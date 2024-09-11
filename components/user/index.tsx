@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { SignOutButton } from "@clerk/nextjs";
+import { SignOutButton, UserProfile } from "@clerk/nextjs";
 import { User } from "@/types/user";
 import { useRouter } from "next/navigation";
 
@@ -64,6 +64,11 @@ export default function ({ user }: Props) {
 
         <DropdownMenuCheckboxItem className="text-center truncate">
           <a href={`/covers/brand`}>品牌案例</a>
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuSeparator />
+
+        <DropdownMenuCheckboxItem>
+          <a href={`/person-info`}>个人中心</a>
         </DropdownMenuCheckboxItem>
         <DropdownMenuSeparator />
 
