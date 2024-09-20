@@ -8,8 +8,6 @@ AI Cover Generator by [aicover.design](https://aicover.design)
 
 [https://aicover.design](https://aicover.design)
 
-![demo](./preview.png)
-
 ## Quick Start
 
 1. clone project
