@@ -1,14 +1,44 @@
-"use client";
+'use client'
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const router = useRouter();
+  // const router = useRouter();
   const [description, setDescription] = useState("");
+  const [longText, setLongText] = useState("");
 
   const handleSearch = () => {
-    router.push("/search?q=" + description);
+    // router.push("/search?q=" + description);
+    getOllamaSearch(description);
+  };
+
+  // 获取机器人列表
+  const getOllamaSearch = async function (q: string) {
+    try {
+      const uri = "/api/ollama-api";
+      const params = {
+        q,
+        m: "llama3.1:latest", // llama3.1:latest、wen2.5:latest
+        s: false
+      };
+
+      const resp = await fetch(uri, {
+        method: "POST",
+        body: JSON.stringify(params),
+      })
+
+      if (resp.ok) {
+        const res = await resp.json();
+        console.log("res.data.data=====>", res.data.response);
+        if (res.data) {
+          setLongText(res.data.response);
+          return;
+        }
+      }
+    } catch (e) {
+      console.log("get info failed: ", e);
+    }
   };
 
   return (
@@ -90,6 +120,10 @@ export default function Page() {
             </div>
 
             <div className="leading-7 [&amp;:not(:first-child)]:mt-4"></div>
+
+            <div className="text-slate-400 max-h-96 overflow-y-scroll mt-4">
+              <pre className="whitespace-pre-line">{ longText }</pre>
+            </div>
           </div>
         </div>
       </div>

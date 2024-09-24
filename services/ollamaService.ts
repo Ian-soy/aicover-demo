@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const ollamaApiUrl = "http://localhost:3001/api/generate";
+const ollamaApiUrl = `${process.env.INDEX_API_BASE_URI}/ollama/api/generate`;
 
-const getResponseFromOllama = async (inputData: object) => {
+const getResponseFromOllama = async (data: object) => {
   try {
-    const response = await axios.post(ollamaApiUrl, inputData);
+    const response = await axios.post(ollamaApiUrl, data);
     return response.data;
   } catch (error) {
     console.error("Error fetching response from Ollama:", error);

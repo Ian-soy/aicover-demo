@@ -19,6 +19,5 @@ export function respJson(code: number, message: string, data?: any) {
   if (data) {
     json["data"] = data;
   }
-
   return Response.json(json);
 }
