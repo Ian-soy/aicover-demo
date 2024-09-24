@@ -1,16 +1,19 @@
 'use client'
 
 import { useState } from "react";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
-  // const router = useRouter();
+  const router = useRouter();
   const [description, setDescription] = useState("");
   const [longText, setLongText] = useState("");
 
   const handleSearch = () => {
-    // router.push("/search?q=" + description);
     getOllamaSearch(description);
+  };
+
+  const handleSearchList = () => {
+    router.push("/search?q=" + description);
   };
 
   // 获取机器人列表
@@ -76,7 +79,7 @@ export default function Page() {
                 <div
                   className="flex items-center gap-x-1 mb-0 text-slate-300"
                   onClick={() => {
-                    handleSearch();
+                    handleSearchList();
                   }}
                 >
                   <div
@@ -102,7 +105,7 @@ export default function Page() {
               <div
                 className="absolute right-4 bottom-3.5 cursor-pointer font-bold rounded-full p-1.5 hover:bg-base-200 text-slate-300"
                 onClick={() => {
-                  handleSearch();
+                  handleSearchList();
                 }}
               >
                 <svg
