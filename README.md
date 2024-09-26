@@ -65,7 +65,6 @@ open `http://localhost:3000` for preview
 
 ## Credit to
 
-- [aiwallpaper](https://aiwallpaper.shop) for code reference
 - [nextjs](https://nextjs.org/docs) for full-stack development
 - [clerk](https://clerk.com/docs/quickstarts/nextjs) for user auth
 - [aws s3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html) for image storage
